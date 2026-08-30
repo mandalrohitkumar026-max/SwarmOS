@@ -1,0 +1,30 @@
+{
+  "name": "swarmos-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SwarmOS — Multi-Agent Drone Coordination Platform for Disaster Response",
+  "workspaces": [
+    "shared",
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "install:all": "npm install",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build:shared": "npm --prefix shared run build",
+    "build:backend": "npm --prefix backend run build",
+    "build:frontend": "npm --prefix frontend run build",
+    "build": "npm run build:shared && npm run build:backend && npm run build:frontend",
+    "start": "node backend/dist/server.js"
+  },
+  "keywords": [
+    "drone-swarm",
+    "multi-agent",
+    "disaster-response",
+    "autonomous-systems",
+    "ai-coordination"
+  ],
+  "author": "SwarmOS Team",
+  "license": "MIT"
+}
