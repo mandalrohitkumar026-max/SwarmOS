@@ -1,25 +1,30 @@
 {
-  "name": "swarmos-backend",
+  "name": "swarmos-monorepo",
   "version": "1.0.0",
-  "description": "SwarmOS Autonomous Simulation & Multi-Agent Coordination Backend",
-  "main": "dist/server.js",
+  "private": true,
+  "description": "SwarmOS — Multi-Agent Drone Coordination Platform for Disaster Response",
+  "workspaces": [
+    "shared",
+    "backend",
+    "frontend"
+  ],
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
-    "build": "tsc",
-    "start": "node dist/server.js"
+    "install:all": "npm install",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build:shared": "npm --prefix shared run build",
+    "build:backend": "npm --prefix backend run build",
+    "build:frontend": "npm --prefix frontend run build",
+    "build": "npm run build:shared && npm run build:backend && npm run build:frontend",
+    "start": "node backend/dist/server.js"
   },
-  "dependencies": {
-    "@swarmos/shared": "*",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
-    "socket.io": "^4.7.5"
-  },
-  "devDependencies": {
-    "@types/cors": "^2.8.17",
-    "@types/express": "^4.17.21",
-    "@types/node": "^20.12.12",
-    "ts-node-dev": "^2.0.0",
-    "typescript": "^5.4.5"
-  }
+  "keywords": [
+    "drone-swarm",
+    "multi-agent",
+    "disaster-response",
+    "autonomous-systems",
+    "ai-coordination"
+  ],
+  "author": "SwarmOS Team",
+  "license": "MIT"
 }
