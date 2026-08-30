@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#080c14] text-slate-100 font-sans;
+  }
+}
+
+/* Tactical HUD & Glass styling */
+.hud-panel {
+  @apply bg-slate-900/80 backdrop-blur-md border border-slate-800/80 rounded-xl shadow-2xl;
+}
+
+.hud-panel-active {
+  @apply bg-slate-900/90 backdrop-blur-lg border border-cyan-500/40 shadow-[0_0_20px_rgba(6,182,212,0.15)];
+}
+
+.hud-card {
+  @apply bg-slate-950/60 border border-slate-800/60 rounded-lg;
+}
+
+.hud-card-hover {
+  @apply hover:border-slate-700 hover:bg-slate-900/70 transition-all duration-200;
+}
+
+.hud-glow-cyan {
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.35);
+}
+
+.hud-glow-amber {
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.35);
+}
+
+.hud-glow-rose {
+  box-shadow: 0 0 15px rgba(244, 63, 94, 0.35);
+}
+
+.hud-glow-emerald {
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.35);
+}
+
+/* Custom Tactical Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(51, 65, 85, 0.8);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(6, 182, 212, 0.5);
+}
+
+/* Tactical Grid Background Pattern */
+.bg-grid-tactical {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(51, 65, 85, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(51, 65, 85, 0.1) 1px, transparent 1px);
+}
+
+/* Scanline Effect */
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+}
